@@ -1,16 +1,16 @@
 # ========== Profile ========== #
 # avatar
-avatar: /avatar/Misaka.jpg
+avatar: /avatar/Avatar.jpg
 # author name
-author: fi3ework
+author: SimonXie2004
 # signature
-signature: witness me
+signature: What does the world look like sitting on the rainbow?
 # SNS (you can custom the order)
 social:
-  email: 12345@qq.com
-  github: //github.com/fi3ework
+  email: 
+  github: 
   # wechat should be a path of qr-code image path
-  wechat: /assets/example_qr.png
+  wechat: 
   # qq should be a path of qr-code image path
   qq: 
   telegram: 
@@ -62,16 +62,16 @@ profile_links:
 
 # ========== Site ========== #
 # title of the site (good for SEO)
-SEO_title: fi3ework's Studio
+SEO_title: Simonxie's Workshop
 # keywords for site (good for SEO)
 SEO_keywords:
   - hexo
   - 'hexo-theme'
   - 'hexo-blog'
 # main title shown in header image
-main_title: fi3ework's Studio.
+main_title: Simonxie's Workshop
 # subtitle
-subtitle: it's better to burn out than to fade away
+subtitle: Find your own path.
 # site haeder image
 site_header_image: /intro/index-bg.jpg
 # post haeder image
