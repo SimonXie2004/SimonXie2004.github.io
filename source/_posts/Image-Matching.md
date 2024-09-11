@@ -85,12 +85,68 @@ In comparison, the images on the left are overly blue, green, or red (from top t
 
 ## 3. Final Results
 
-<img src="/images/final-results/cathedral.jpg" width="60%" style="display:inline-block; margin-right: 10px;" /> <img src="/images/final-results/church.jpg" width="30%" style="display:inline-block; margin-right: 10px;" /> <img src="/images/final-results/emir.jpg" width="30%" style="display:inline-block;" />
-<img src="/images/final-results/harvesters.jpg" width="30%" style="display:inline-block; margin-right: 10px;" /> <img src="/images/final-results/icon.jpg" width="30%" style="display:inline-block; margin-right: 10px;" /> <img src="/images/final-results/lady.jpg" width="30%" style="display:inline-block;" />
-<img src="/images/final-results/melons.jpg" width="30%" style="display:inline-block; margin-right: 10px;" /> <img src="/images/final-results/monastery.jpg" width="60%" style="display:inline-block; margin-right: 10px;" /> <img src="/images/final-results/onion_church.jpg" width="30%" style="display:inline-block;" />
-<img src="/images/final-results/sculpture.jpg" width="30%" style="display:inline-block; margin-right: 10px;" /> <img src="/images/final-results/self_portrait.jpg" width="30%" style="display:inline-block; margin-right: 10px;" /> <img src="/images/final-results/three_generations.jpg" width="30%" style="display:inline-block;" />
-<img src="/images/final-results/tobolsk.jpg" width="60%" style="display:inline-block; margin-right: 10px;" /> <img src="/images/final-results/train.jpg" width="30%" style="display:inline-block; margin-right: 10px;" />
+<img src="/images/final-results/cathedral.jpg" width="70%" style="display:inline-block; margin-right: 10px;" /> 
+
+> Cathedral.jpg: Gshift: (2, 5); Rshift: (3, 12)
+
+<img src="/images/final-results/church.jpg" width="30%" style="display:inline-block; margin-right: 10px;" /> 
+
+> Church.jpg: Gshift: (4, 25); Rshift: (-4, 58)
+
+<img src="/images/final-results/emir.jpg" width="30%" style="display:inline-block;" />
+
+> Emir.jpg: Gshift: (23, 49); Rshift: (41, 106)
+
+<img src="/images/final-results/harvesters.jpg" width="30%" style="display:inline-block; margin-right: 10px;" /> 
+
+> Harvesters.jpg: Gshift: (17, 59); Rshift: (14, 123)
+
+<img src="/images/final-results/icon.jpg" width="30%" style="display:inline-block; margin-right: 10px;" /> 
+
+> Icon.jpg: Gshift: (17, 40); Rshift: (23, 90)
+
+<img src="/images/final-results/lady.jpg" width="30%" style="display:inline-block;" />
+
+> Lady.jpg: Gshift: (9, 55); Rshift: (12, 118)
+
+<img src="/images/final-results/melons.jpg" width="30%" style="display:inline-block; margin-right: 10px;" /> 
+
+> Melon.jpg: Gshift: (10, 81); Rshift: (13, 177)
+
+<img src="/images/final-results/monastery.jpg" width="60%" style="display:inline-block; margin-right: 10px;" /> 
+
+> Monastery.jpg: Gshift: (2, -3); Rshift: (2, 3)
+
+<img src="/images/final-results/onion_church.jpg" width="30%" style="display:inline-block;" />
+
+> Onion_church.jpg: Gshift: (27, 51); Rshift: (37, 108)
+
+<img src="/images/final-results/sculpture.jpg" width="30%" style="display:inline-block; margin-right: 10px;" /> 
+
+> Sculpture.jpg: Gshift: (-11, 33); Rshift: (-27, 140)
+
+<img src="/images/final-results/self_portrait.jpg" width="30%" style="display:inline-block; margin-right: 10px;" /> 
+
+> Self_portrait.jpg: Gshift: (29, 78); Rshift: (37, 175)
+
+<img src="/images/final-results/three_generations.jpg" width="30%" style="display:inline-block;" />
+
+> Three_generations.jpg: Gshift: (14, 52); Rshift: (11, 111)
+
+<img src="/images/final-results/tobolsk.jpg" width="60%" style="display:inline-block; margin-right: 10px;" /> 
+
+> Tobolsk.jpg: Gshift: (3, 3); Rshift: (3, 7)
+
+<img src="/images/final-results/train.jpg" width="30%" style="display:inline-block; margin-right: 10px;" />
+
+> Train.jpg: Gshift: (5, 41); Rshift: (31, 85)
 
 ## 4. Extended Results
 
-<img src="/images/final-results/lugano.jpg" width="80%" style="display:inline-block; margin-right: 10px;" /> <img src="/images/final-results/lugano2.jpg" width="80%" style="display:inline-block; margin-right: 10px;" /> 
+<img src="/images/final-results/lugano.jpg" width="80%" style="display:inline-block; margin-right: 10px;" /> 
+
+<img src="/images/final-results/lugano2.jpg" width="80%" style="display:inline-block; margin-right: 10px;" /> 
+
+> Lugano.jpg: Gshift: (-2, 4); Rshift: (-3, 9)
+
+> Lugano2.jpg: Gshift: (1, 3); Rshift: (4, 8)
