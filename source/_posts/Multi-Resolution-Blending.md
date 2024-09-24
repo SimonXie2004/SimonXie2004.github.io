@@ -1,8 +1,9 @@
 ---
-title: Multi-Resolution_Blending
-tags: CV
+title: Multi-Resolution Image Blending
+tags: Computer Vision
 mathjax: true
 date: 2024-09-23 14:33:52
+abstract: Fun with Sobel, Gaussian Filters and Image Pyramids/Stacks; Blend Images by Band-Pass Filters.
 ---
 
 
@@ -22,7 +23,7 @@ This project involves three parts:
 
 ### Finite Difference Operators
 
-<img src="/images/Multi-Resolution_Blending/image-20240923020522694.png" style="zoom:100%;" />
+<img src="/images/Multi-Resolution_Blending/image-20240923020522694.png" style="zoom:80%;" />
 
 1. The simplest way to compute derivatives on images is by convolving the image with finite difference operators (FODs). Take $D_x = \begin{bmatrix}1 & -1 \end{bmatrix}$ as an example, for each pixel in the resulting image (excepting those on the edge), they are equal to the original pixel minus its neighbor to the right. This operator is hence sensitive to **vertical** gradients. 
 
@@ -126,19 +127,19 @@ This project involves three parts:
 
 Intuitive: if we simply implement alpha-blending on images, the results will look strange with unnatural transitions. How can we come up with a method to blend them together better?
 
-<img src="/images/Multi-Resolution_Blending/image-20240923142418940.png" alt="image-20240923142418940" style="zoom: 67%;" />
+<img src="/images/Multi-Resolution_Blending/image-20240923142418940.png" alt="image-20240923142418940" style="zoom: 80%;" />
 
 ### Gaussian and Laplacian Stacks
 
 1. First, we introduce the Gaussian and Laplacian stack. This is to represent the image's different frequency components in a **hierarchal** way. For each level of image, we blur it and push it into stack.
 
-   <img src="/images/Multi-Resolution_Blending/image-20240923142514805.png" />
+   <img src="/images/Multi-Resolution_Blending/image-20240923142514805.png" style="zoom: 70%;"/>
 
    > Image cited from CS180 FA24, UC Berkeley, Alexei Efros.
 
 ### Multi-Resolution Blending
 
-1. Here are some results:
+1. Here are some results (Gaussian Stacks & Laplacian Stacks):
 
    <img src="/images/Multi-Resolution_Blending/image-20240923142631089.png" />
 
@@ -152,13 +153,15 @@ Intuitive: if we simply implement alpha-blending on images, the results will loo
 
    <img src="/images/Multi-Resolution_Blending/image-20240923142711330.png" />
 
-4. Everything has been prepared! We may simply blend images together, according to the mask value! Look at this juicy **ora-pple**!
+4. Everything has been prepared! We may simply blend images together, according to the mask value.
 
    <img src="/images/Multi-Resolution_Blending/image-20240923142735509.png" />
 
+   And here comes the juicy ora-pple! (Need to **collapse** the Laplacian Stack by adding all layers together)
+
    <img src="/images/Multi-Resolution_Blending/image-20240923142748599.png" />
 
-5. Here are some of my results:
+5. Here are some of more results:
 
    **Sun-Moon**:
 

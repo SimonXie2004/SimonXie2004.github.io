@@ -7,8 +7,8 @@ author: SimonXie2004
 signature: What does the world look like sitting on the rainbow?
 # SNS (you can custom the order)
 social:
-  email: 
-  github: 
+  email: simonxie2004@163.com
+  github: https://github.com/SimonXie2004
   # wechat should be a path of qr-code image path
   wechat: 
   # qq should be a path of qr-code image path
@@ -24,7 +24,7 @@ social:
   segmentFault: 
   juejin: 
   v2ex: 
-  bilibili: 
+  bilibili: https://space.bilibili.com/240808340
   linkedin: 
   steam: 
   others: 
@@ -68,6 +68,9 @@ SEO_keywords:
   - hexo
   - 'hexo-theme'
   - 'hexo-blog'
+  - SimonXie
+  - Simon
+  - Workshop
 # main title shown in header image
 main_title: Simonxie's Workshop
 # subtitle
