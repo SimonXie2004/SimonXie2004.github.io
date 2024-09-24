@@ -1,48 +1,56 @@
-name: Deploy Hexo
+name: Pages
 
 on:
   push:
     branches:
-      - master
+      - main # default branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v2-beta
-      with:
-        node-version: '12'
-
-    - name: Install pandoc (Latex support)
-      run: |
-        wget -O pandoc.deb https://github.com/jgm/pandoc/releases/download/3.4/pandoc-3.4-1-amd64.deb
-        sudo dpkg -i pandoc.deb
-
-    - name: Set git environment
-      env: 
-        # 1. Add this private key and title as DEPLOY_KEY in this repo -> settings/secrets
-        # 2. Add corresponding public key and named as any text to the github page repo -> settings/deploy keys
-        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-        USERNAME: SimonXie2004
-        EMAIL: simonxie2004@163.com
-      run: |
-        mkdir -p ~/.ssh/
-        echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
-        git config --global user.name "$USERNAME"
-        git config --global user.email "$EMAIL"
-
-    - name: Setup Hexo environment
-      run: |
-        npm install -g hexo-cli
-        npm install
-
-    - name: Deploy Hexo
-      run: |
-        hexo g
-        hexo d
+      # Install pandoc for mathjax (Optional)
+      - name: Install pandoc
+        run: |
+          cd /tmp
+          wget -c https://github.com/jgm/pandoc/releases/download/3.4/pandoc-3.4-1-amd64.deb
+          sudo dpkg -i pandoc-3.4-1-amd64.deb
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # If your repository depends on submodule, please see: https://github.com/actions/checkout
+          submodules: recursive
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          # Examples: 20, 18.19, >=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node
+          # Ref: https://github.com/actions/setup-node#supported-version-syntax
+          node-version: "20"
+      - name: Cache NPM dependencies
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
