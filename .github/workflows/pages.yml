@@ -29,6 +29,11 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
+      # Install pandoc for mathjax (Optional)
+      - name: Install pandoc
+        run: |
+          wget -c https://github.com/jgm/pandoc/releases/download/3.4/pandoc-3.4-1-amd64.deb
+          sudo dpkg -i pandoc-3.4-1-amd64.deb
       - name: Build
         run: npm run build
       - name: Upload Pages artifact
@@ -48,9 +53,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      # Install pandoc for mathjax (Optional)
-      - name: Install pandoc
-        run: |
-          cd /tmp
-          wget -c https://github.com/jgm/pandoc/releases/download/3.4/pandoc-3.4-1-amd64.deb
-          sudo dpkg -i pandoc-3.4-1-amd64.deb
+      
