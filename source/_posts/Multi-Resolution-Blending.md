@@ -1,6 +1,11 @@
 ---
 title: Multi-Resolution Image Blending
-tags: Computer Vision
+tags: 
+- Computer Vision
+- Image Filters
+- Image Stacks
+- Image Pyramids
+category: UCB-CV-Project
 mathjax: true
 date: 2024-09-23 14:33:52
 header_image: /images/Multi-Resolution_Blending/head.png

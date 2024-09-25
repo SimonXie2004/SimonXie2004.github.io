@@ -29,6 +29,8 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
+      - name: Install Json Generator
+        run: npm install hexo-generator-json-content
       # Install pandoc for mathjax (Optional)
       - name: Install pandoc
         run: |

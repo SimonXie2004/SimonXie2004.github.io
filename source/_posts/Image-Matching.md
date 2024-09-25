@@ -1,6 +1,10 @@
 ---
 title: Image Matching & Colorizing
-tags: Computer Vision
+tags: 
+- Computer Vision
+- SSIM
+- Image Auto Balancing
+category: UCB-CV-Project
 date: 2024-09-09 15:56:02
 mathjax: true
 header_image: /images/Image-Matching/head.png
