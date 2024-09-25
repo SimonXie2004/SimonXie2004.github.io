@@ -77,19 +77,19 @@ Although the basic method works for low-resolution images, it usually fails for 
   <tr>
     <td>
       <figure>
-        <img src="/images/interm-results/emir.jpg" alt="emir.jpg" width="200"/>
+        <img src="/images/Image-Matching/interm-results/emir.jpg" alt="emir.jpg" width="200"/>
         <figcaption>Gshift: (23, 49) <br> Rshift: (41, 106)</figcaption>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/interm-results/cathedral.jpg" alt="cathedral.jpg" width="200"/>
+        <img src="/images/Image-Matching/interm-results/cathedral.jpg" alt="cathedral.jpg" width="200"/>
         <figcaption>Gshift: (2, 5) <br> Rshift: (3, 12)</figcaption>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/interm-results/church.jpg" alt="church.jpg" width="200"/>
+        <img src="/images/Image-Matching/interm-results/church.jpg" alt="church.jpg" width="200"/>
         <figcaption>Gshift: (4, 25) <br> Rshift: (-4, 58)</figcaption>
       </figure>
     </td>
@@ -97,19 +97,19 @@ Although the basic method works for low-resolution images, it usually fails for 
   <tr>
     <td>
       <figure>
-        <img src="/images/interm-results/harvesters.jpg" alt="harvesters.jpg" width="200"/>
+        <img src="/images/Image-Matching/interm-results/harvesters.jpg" alt="harvesters.jpg" width="200"/>
         <figcaption>Gshift: (17, 59) <br> Rshift: (14, 123)</figcaption>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/interm-results/icon.jpg" alt="icon.jpg" width="200"/>
+        <img src="/images/Image-Matching/interm-results/icon.jpg" alt="icon.jpg" width="200"/>
         <figcaption>Gshift: (17, 40) <br> Rshift: (23, 90)</figcaption>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/interm-results/lady.jpg" alt="lady.jpg" width="200"/>
+        <img src="/images/Image-Matching/interm-results/lady.jpg" alt="lady.jpg" width="200"/>
         <figcaption>Gshift: (9, 55) <br> Rshift: (12, 118)</figcaption>
       </figure>
     </td>
@@ -117,19 +117,19 @@ Although the basic method works for low-resolution images, it usually fails for 
   <tr>
     <td>
       <figure>
-        <img src="/images/interm-results/melons.jpg" alt="melons.jpg" width="200"/>
+        <img src="/images/Image-Matching/interm-results/melons.jpg" alt="melons.jpg" width="200"/>
         <figcaption>Gshift: (10, 81) <br> Rshift: (13, 177)</figcaption>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/interm-results/monastery.jpg" alt="monastery.jpg" width="200"/>
+        <img src="/images/Image-Matching/interm-results/monastery.jpg" alt="monastery.jpg" width="200"/>
         <figcaption>Gshift: (2, -3) <br> Rshift: (2, 3)</figcaption>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/interm-results/onion_church.jpg" alt="onion_church.jpg" width="200"/>
+        <img src="/images/Image-Matching/interm-results/onion_church.jpg" alt="onion_church.jpg" width="200"/>
         <figcaption>Gshift: (27, 51) <br> Rshift: (37, 108)</figcaption>
       </figure>
     </td>
@@ -137,19 +137,19 @@ Although the basic method works for low-resolution images, it usually fails for 
   <tr>
     <td>
       <figure>
-        <img src="/images/interm-results/sculpture.jpg" alt="sculpture.jpg" width="200"/>
+        <img src="/images/Image-Matching/interm-results/sculpture.jpg" alt="sculpture.jpg" width="200"/>
         <figcaption>Gshift: (-11, 33) <br> Rshift: (-27, 140)</figcaption>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/interm-results/self_portrait.jpg" alt="self_portrait.jpg" width="200"/>
+        <img src="/images/Image-Matching/interm-results/self_portrait.jpg" alt="self_portrait.jpg" width="200"/>
         <figcaption>Gshift: (29, 78) <br> Rshift: (37, 175)</figcaption>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/interm-results/three_generations.jpg" alt="three_generations.jpg" width="200"/>
+        <img src="/images/Image-Matching/interm-results/three_generations.jpg" alt="three_generations.jpg" width="200"/>
         <figcaption>Gshift: (14, 52) <br> Rshift: (11, 111)</figcaption>
       </figure>
     </td>
@@ -157,13 +157,13 @@ Although the basic method works for low-resolution images, it usually fails for 
   <tr>
     <td>
       <figure>
-        <img src="/images/interm-results/tobolsk.jpg" alt="tobolsk.jpg" width="200"/>
+        <img src="/images/Image-Matching/interm-results/tobolsk.jpg" alt="tobolsk.jpg" width="200"/>
         <figcaption>Gshift: (3, 3) <br> Rshift: (3, 7)</figcaption>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/interm-results/train.jpg" alt="train.jpg" width="200"/>
+        <img src="/images/Image-Matching/interm-results/train.jpg" alt="train.jpg" width="200"/>
         <figcaption>Gshift: (5, 41) <br> Rshift: (31, 85)</figcaption>
       </figure>
     </td>
@@ -191,12 +191,12 @@ This is a straightforward algorithm. We select the minimum & maximum value $\min
   <tr>
     <td>
       <figure>
-        <img src="/images/interm-results/sculpture.jpg" alt="sculpture.jpg" width="300"/>
+        <img src="/images/Image-Matching/interm-results/sculpture.jpg" alt="sculpture.jpg" width="300"/>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/final-results/sculpture.jpg" alt="sculpture_balanced.jpg" width="300"/>
+        <img src="/images/Image-Matching/final-results/sculpture.jpg" alt="sculpture_balanced.jpg" width="300"/>
       </figure>
     </td>
   </tr>
@@ -208,12 +208,12 @@ This is a straightforward algorithm. We select the minimum & maximum value $\min
   <tr>
     <td>
       <figure>
-        <img src="/images/interm-results/church.jpg" alt="church.jpg" width="300"/>
+        <img src="/images/Image-Matching/interm-results/church.jpg" alt="church.jpg" width="300"/>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/final-results/church.jpg" alt="church_balanced.jpg" width="300"/>
+        <img src="/images/Image-Matching/final-results/church.jpg" alt="church_balanced.jpg" width="300"/>
       </figure>
     </td>
   </tr>
@@ -231,80 +231,80 @@ In comparison, the images on the left are overly blue, green, or red. The auto-c
   <tr>
     <td>
       <figure>
-        <img src="/images/final-results/emir.jpg" alt="emir.jpg" width="200"/>
+        <img src="/images/Image-Matching/final-results/emir.jpg" alt="emir.jpg" width="200"/>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/final-results/cathedral.jpg" alt="cathedral.jpg" width="200"/>
+        <img src="/images/Image-Matching/final-results/cathedral.jpg" alt="cathedral.jpg" width="200"/>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/final-results/church.jpg" alt="church.jpg" width="200"/>
-      </figure>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <figure>
-        <img src="/images/final-results/harvesters.jpg" alt="harvesters.jpg" width="200"/>
-      </figure>
-    </td>
-    <td>
-      <figure>
-        <img src="/images/final-results/icon.jpg" alt="icon.jpg" width="200"/>
-      </figure>
-    </td>
-    <td>
-      <figure>
-        <img src="/images/final-results/lady.jpg" alt="lady.jpg" width="200"/>
+        <img src="/images/Image-Matching/final-results/church.jpg" alt="church.jpg" width="200"/>
       </figure>
     </td>
   </tr>
   <tr>
     <td>
       <figure>
-        <img src="/images/final-results/melons.jpg" alt="melons.jpg" width="200"/>
+        <img src="/images/Image-Matching/final-results/harvesters.jpg" alt="harvesters.jpg" width="200"/>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/final-results/monastery.jpg" alt="monastery.jpg" width="200"/>
+        <img src="/images/Image-Matching/final-results/icon.jpg" alt="icon.jpg" width="200"/>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/final-results/onion_church.jpg" alt="onion_church.jpg" width="200"/>
-      </figure>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <figure>
-        <img src="/images/final-results/sculpture.jpg" alt="sculpture.jpg" width="200"/>
-      </figure>
-    </td>
-    <td>
-      <figure>
-        <img src="/images/final-results/self_portrait.jpg" alt="self_portrait.jpg" width="200"/>
-      </figure>
-    </td>
-    <td>
-      <figure>
-        <img src="/images/final-results/three_generations.jpg" alt="three_generations.jpg" width="200"/>
+        <img src="/images/Image-Matching/final-results/lady.jpg" alt="lady.jpg" width="200"/>
       </figure>
     </td>
   </tr>
   <tr>
     <td>
       <figure>
-        <img src="/images/final-results/tobolsk.jpg" alt="tobolsk.jpg" width="200"/>
+        <img src="/images/Image-Matching/final-results/melons.jpg" alt="melons.jpg" width="200"/>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/final-results/train.jpg" alt="train.jpg" width="200"/>
+        <img src="/images/Image-Matching/final-results/monastery.jpg" alt="monastery.jpg" width="200"/>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="/images/Image-Matching/final-results/onion_church.jpg" alt="onion_church.jpg" width="200"/>
+      </figure>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <figure>
+        <img src="/images/Image-Matching/final-results/sculpture.jpg" alt="sculpture.jpg" width="200"/>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="/images/Image-Matching/final-results/self_portrait.jpg" alt="self_portrait.jpg" width="200"/>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="/images/Image-Matching/final-results/three_generations.jpg" alt="three_generations.jpg" width="200"/>
+      </figure>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <figure>
+        <img src="/images/Image-Matching/final-results/tobolsk.jpg" alt="tobolsk.jpg" width="200"/>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="/images/Image-Matching/final-results/train.jpg" alt="train.jpg" width="200"/>
       </figure>
     </td>
   </tr>
@@ -318,12 +318,12 @@ In comparison, the images on the left are overly blue, green, or red. The auto-c
   <tr>
     <td>
       <figure>
-        <img src="/images/final-results/lugano.jpg" alt="lugano.jpg" width="300"/>
+        <img src="/images/Image-Matching/final-results/lugano.jpg" alt="lugano.jpg" width="300"/>
       </figure>
     </td>
     <td>
       <figure>
-        <img src="/images/final-results/lugano2.jpg" alt="lugano2.jpg" width="300"/>
+        <img src="/images/Image-Matching/final-results/lugano2.jpg" alt="lugano2.jpg" width="300"/>
       </figure>
     </td>
   </tr>
