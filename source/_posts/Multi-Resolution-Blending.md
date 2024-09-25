@@ -3,13 +3,12 @@ title: Multi-Resolution Image Blending
 tags: Computer Vision
 mathjax: true
 date: 2024-09-23 14:33:52
-abstract: UC Berkeley CV Project 2 - Fun with Sobel, Gaussian Filters and Image Pyramids/Stacks; Blend Images by Band-Pass Filters.
+header_image: /images/Multi-Resolution_Blending/head.png
+abstract: UC-Berkeley 24FA CV Project 2 - Fun with Sobel, Gaussian Filters and Image Pyramids/Stacks; Blend Images by Band-Pass Filters.
 ---
 
-
-# Image Filtering
-
-> UC Berkeley CV Project 2: Image Filtering
+> UC-Berkeley 24FA CV Project 2:  
+> Fun with Sobel, Gaussian Filters and Image Pyramids/Stacks; Blend Images by Band-Pass Filters.
 
 ## Roadmap
 

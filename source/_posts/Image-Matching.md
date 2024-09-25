@@ -4,7 +4,7 @@ tags: Computer Vision
 date: 2024-09-09 15:56:02
 mathjax: true
 header_image: /images/Image-Matching/head.png
-abstract: UC Berkeley CV Project 1 - Colorizing the Images of the Russian Empire by Image Matching
+abstract: UC-Berkeley 24FA CV Project 1 - Colorizing the Images of the Russian Empire by Image Matching
 ---
 
 > UC-Berkeley 24FA CV Project 1: Colorizing the Images of the [Russian Empire](https://www.loc.gov/collections/prokudin-gorskii/?st=grid)
