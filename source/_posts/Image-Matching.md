@@ -2,8 +2,7 @@
 title: Image Matching & Colorizing
 tags: 
 - Computer Vision
-- SSIM
-- Image Auto Balancing
+- Image Metrics
 category: UCB-CV-Project
 date: 2024-09-09 15:56:02
 mathjax: true
