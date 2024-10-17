@@ -44,17 +44,11 @@ N/A
 5. State Space Graph: Nodes = states, Arcs = successors (action results)
 
 6. Tree Search
-
    1. Main Idea: Expand out potential nodes; Maintain a fringe of partial plans under consideration; Expand less nodes.
-
    2. Key notions: Expansion, Expansion Strategy, Fringe
-
    3. Common tree search patterns
-
       (Suppose b = branching factor, m = tree depth.) Nodes in search tree? $\sum_{i=0}^{m}b^i = O(b^m)$
-
       (For BFS, suppose s = depth of shallowest solution)
-
       (For Uniform Cost Search, suppose solution costs $C^*$, min(arc_cost) = $\epsilon$)
 
       |      | Strategy                     | Fringe                             | Time              | Memory                | Completeness        | Optimality       |
@@ -64,19 +58,14 @@ N/A
       | UCS  | Expand cheapest node first   | Priority Queue (p=cumulative cost) | $O(C^*/\epsilon)$ | $O(b^{C^*/\epsilon})$ | True                | True             |
 
    4. Special Idea: Iterative Deepening
-
       Run DFS(depth_limit=1), DFS(depth_limit=2), ...
 
    5. Example Problem: Pancake flipping; Cost: Number of pancakes flipped
 
 7. Graph Search
-
    1. Idea: never expand a state twice
-
    2. Method: record set of expanded states where elements = (state, cost).
-
       If a node popped from queue is NOT visited, visit it.
-
       If a node popped from queue is visited, check its cost. If the cost if lower, expand it. Else skip it.
 
 ## Lec3: Informed Search
@@ -101,15 +90,12 @@ N/A
 5. A* Search
 
    1. When to stop: Only if we dequeue a goal
-
    2. Admissible (optimistic) heuristic: $\forall n, 0 \le h(n) \le h^*(n)$.
-
       A* Tree Search is optimal if heuristic is admissible. Proof: [Step 1](/images/AI-Cheatsheet-Midterm-Review/image-20241015201833608.png), [Step 2](/images/AI-Cheatsheet-Midterm-Review/image-20241015202236091.png).
 
       ![](/images/AI-Cheatsheet-Midterm-Review/image-20241015205551123.png)
 
    3. Consistent heuristic: $\forall A, B, h(A) - h(B) \le cost(A, B)$
-
       A* Graph Search is optimal if heuristic is consistent. Proof: [Sketch](/images/AI-Cheatsheet-Midterm-Review/image-20241015205947986.png), [Step 1](/images/AI-Cheatsheet-Midterm-Review/image-20241015210104967.png),  [Step 2](/images/AI-Cheatsheet-Midterm-Review/image-20241015210029502.png)
 
       ![](/images/AI-Cheatsheet-Midterm-Review/image-20241015205615408.png)
