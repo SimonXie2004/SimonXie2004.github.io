@@ -3,14 +3,18 @@ title: Image-Homography
 mathjax: true
 date: 2024-10-19 23:18:38
 tags:
-category:
-header_image:
-abstract:
+- Computer Vision
+- Image Processing
+category: UCB-CV-Project
+header_image: /images/Image-Homography/teaser_final.png
+abstract: UC-Berkeley 24FA CV Project 4a - Morphing Images to create Homography.
 ---
 
 # IMAGE WARPING and MOSAICING
 
 > Creating panorama images by registering, projective warping, resampling and compositing them.
+
+![](/images/Image-Homography/final.png)
 
 ## Shoot and Digitize pictures
 
@@ -28,9 +32,9 @@ abstract:
 
 2. Then we define the following corresponding points manually:
 
-   ![corr1](/images/Image-Homography/corr1.png)
+   ![](/images/Image-Homography/corr1.png)
 
-   ![corr2](/images/Image-Homography/corr2.png)
+   ![](/images/Image-Homography/corr2.png)
 
 ## Recover Homographies
 
@@ -93,7 +97,7 @@ abstract:
 
 4. Thus, we have least square method to solve this over-determined equation.
 
-   `h = np.linalg.inv(A.T @ A) @ (A.T @ b)` OR `h, _, _, _ = np.linalg.lstsq(A, b, *rcond*=None)`
+   Both `np.linalg.inv(A.T @ A) @ (A.T @ b)` and `np.linalg.lstsq(A, b)` works.
 
 ## Warp the Images
 
@@ -105,7 +109,31 @@ abstract:
 
 2. Here is our example result:
 
-   ![image-20241019223834635](/images/Image-Homography/image-20241019223834635.png)
+   ![](/images/Image-Homography/image-20241019223834635.png)
+
+## Image Blending
+
+1. In this project, we implement a simple method to average images.
+
+   For any area with $N$ images overlapping, we use factor $\frac{1}{N}$ to average them.
+
+   For example, if there is two projected images, they are averaged by $\frac{1}{2}$.
+
+2. For the area that overlaps, we use this mask to blend to image. 
+
+   For those parts that don't overlap, we simply use the original pixel value from the projected images.
+
+3. Here is an example:
+
+   ![](/images/Image-Homography/partialFinal.png)
+
+   ![](/images/Image-Homography/final.png)
+
+4. More results:
+
+   ![](/images/Image-Homography/image-20241020012614510.png)
+
+   ![](/images/Image-Homography/image-20241020012625562.png)
 
 ## Image Rectification
 
@@ -119,19 +147,6 @@ abstract:
 
    Here we require the ipad in the scene to be rectangular (and hence defined corresponding points on four corners.)
 
-   ![rectify](/images/Image-Homography/rectify.png)
-   ![](images/Image-Homography/case.png)
+   ![](/images/Image-Homography/image-20241020012710902.png)
 
-## Image Blending
-
-1. First, we define a mask as follows:
-
-   ![image-20241019224445092](/images/Image-Homography/image-20241019224445092.png)
-
-2. For the area that overlaps, we use this mask to blend to image. For those parts that don't overlap, we simply use the original pixel value from the projected images.
-
-3. Here is an example:
-
-   ![partialFinal](/images/Image-Homography/partialFinal.png)
-
-   ![final](/images/Image-Homography/final.png)
+   ![](/images/Image-Homography/image-20241020012716590.png)
