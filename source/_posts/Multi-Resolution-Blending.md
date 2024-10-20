@@ -13,6 +13,8 @@ abstract: UC-Berkeley 24FA CV Project 2 - Fun with Sobel, Gaussian Filters and I
 > UC-Berkeley 24FA CV Project 2:  
 > Fun with Sobel, Gaussian Filters and Image Pyramids/Stacks; Blend Images by Band-Pass Filters.
 
+<img src="/images/Multi-Resolution_Blending/image-20240923142748599.png" />
+
 ## Roadmap
 
 This project involves three parts:

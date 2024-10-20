@@ -10,6 +10,9 @@ header_image: /images/Face-Morphing/teaser.png
 abstract: UC-Berkeley 24FA CV Project 3 - Face Morphing, Human Faces Averaging, and Face-PCAs. 
 ---
 
+> UC-Berkeley 24FA CV Project 3 - Face Morphing, Human Faces Averaging, and Face-PCAs. 
+
+![](/images/Face-Morphing/me2dad.gif)
 
 # Face Morphing
 

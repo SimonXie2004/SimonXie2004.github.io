@@ -10,8 +10,7 @@ header_image: /images/Image-Homography/teaser_final.png
 abstract: UC-Berkeley 24FA CV Project 4a - Morphing Images to create Homography.
 ---
 
-# IMAGE WARPING and MOSAICING
-
+> UC-Berkeley 24FA CV Project 4a -  
 > Creating panorama images by registering, projective warping, resampling and compositing them.
 
 ![](/images/Image-Homography/final.png)
