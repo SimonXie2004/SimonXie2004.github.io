@@ -7,7 +7,7 @@ tags:
 - Image Processing
 category: UCB-CV-Project
 header_image: /images/Automatic-Image-Panorama/teaser_final.png
-abstract: UC-Berkeley 24FA CV Project 4a - Morphing Images to create Homography.
+abstract: UC-Berkeley 24FA CV Project 4a & 4b - Automatic Image Panorama.
 ---
 
 > UC-Berkeley 24FA CV Project 4a & 4b: 
