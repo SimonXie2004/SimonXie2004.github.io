@@ -11,8 +11,6 @@ header_image:
 abstract: UC Berkeley CV Project 5a -  Fun with Diffusion Models & 5b - Implement DDPM Yourself
 ---
 
-# Project 5a & 5b
-
 > UC Berkeley CV Project 5a: Fun with Diffusion Models
 >
 > UC Berkeley CV Project 5b: Implement DDPM Yourself
@@ -99,7 +97,6 @@ Here is an example showing the process of adding noise to a single image.
     <th>t=625</th>
     <th>t=750</th>
     <th>t=875</th>
-    <th>t=999</th>
   </tr>
   <tr>
     <td>Noisy <br> Image</td>
@@ -111,7 +108,6 @@ Here is an example showing the process of adding noise to a single image.
     <td><img src="/images/DDPM/campanile_noise6.png" alt="Image 6" width="100"></td>
     <td><img src="/images/DDPM/campanile_noise7.png" alt="Image 7" width="100"></td>
     <td><img src="/images/DDPM/campanile_noise8.png" alt="Image 8" width="100"></td>
-    <td><img src="/images/DDPM/campanile_noise9.png" alt="Image 9" width="100"></td>
   </tr>
 </table>
 
@@ -130,7 +126,6 @@ Let's try to denoise these images using classical methods. Again, take noisy ima
     <th>t=625</th>
     <th>t=750</th>
     <th>t=875</th>
-    <th>t=999</th>
   </tr>
   <tr>
     <td>Noisy <br> Image</td>
@@ -142,7 +137,6 @@ Let's try to denoise these images using classical methods. Again, take noisy ima
     <td><img src="/images/DDPM/campanile_noise6.png" alt="Image 6" width="100"></td>
     <td><img src="/images/DDPM/campanile_noise7.png" alt="Image 7" width="100"></td>
     <td><img src="/images/DDPM/campanile_noise8.png" alt="Image 8" width="100"></td>
-    <td><img src="/images/DDPM/campanile_noise9.png" alt="Image 9" width="100"></td>
   </tr>
   <tr>
     <td>Blurr Image</td>
@@ -154,7 +148,6 @@ Let's try to denoise these images using classical methods. Again, take noisy ima
     <td><img src="/images/DDPM/campanile_noise_gaus6.png" alt="Image 6" width="100"></td>
     <td><img src="/images/DDPM/campanile_noise_gaus7.png" alt="Image 7" width="100"></td>
     <td><img src="/images/DDPM/campanile_noise_gaus8.png" alt="Image 8" width="100"></td>
-    <td><img src="/images/DDPM/campanile_noise_gaus9.png" alt="Image 9" width="100"></td>
   </tr>
 </table>
 
@@ -180,7 +173,6 @@ Note2: Because this diffusion model was trained with text conditioning, we also 
     <th>t=625</th>
     <th>t=750</th>
     <th>t=875</th>
-    <th>t=999</th>
   </tr>
   <tr>
     <td>Noisy<br>Image</td>
@@ -192,7 +184,6 @@ Note2: Because this diffusion model was trained with text conditioning, we also 
     <td><img src="/images/DDPM/campanile_noise6.png" alt="Image 6" width="100"></td>
     <td><img src="/images/DDPM/campanile_noise7.png" alt="Image 7" width="100"></td>
     <td><img src="/images/DDPM/campanile_noise8.png" alt="Image 8" width="100"></td>
-    <td><img src="/images/DDPM/campanile_noise9.png" alt="Image 9" width="100"></td>
   </tr>
   <tr>
     <td>One-step<br>Denoised<br>Image</td>
@@ -204,7 +195,6 @@ Note2: Because this diffusion model was trained with text conditioning, we also 
     <td><img src="/images/DDPM/campanile_noise_onestep6.png" alt="Image 6" width="100"></td>
     <td><img src="/images/DDPM/campanile_noise_onestep7.png" alt="Image 7" width="100"></td>
     <td><img src="/images/DDPM/campanile_noise_onestep8.png" alt="Image 8" width="100"></td>
-    <td><img src="/images/DDPM/campanile_noise_onestep9.png" alt="Image 9" width="100"></td>
   </tr>
 </table>
 
@@ -735,13 +725,13 @@ We need a way to inject scalar $t$ into our UNet model to condition it.
 
 This uses a new operator called `FCBlock` (fully-connected block) which we use to inject the conditioning signal into the UNet:
 
-<img src="/images/DDPM/fc_long.png" alt="image" style="zoom: 33%;" />
+<img src="/images/DDPM/fc_long.png" alt="image" style="zoom: 60%;" />
 
 #### Train the Time Conditioned UNet
 
 Training our time-conditioned UNet $\epsilon_\theta(x_t, t)$ is now pretty easy. Basically, we pick a random image from the training set, a random $t$, and train the denoiser to predict the noise in $x_t$. We repeat this for different images and different t values until the model converges and we are happy.
 
-<img src="/images/DDPM/algo1_t_only.png" alt="image" style="zoom: 33%;" />
+<img src="/images/DDPM/algo1_t_only.png" alt="image" style="zoom: 100%;" />
 
 - **Objective**: Train a time-conditioned UNet $\epsilon_\theta(x_t, t)$ to predict the noise in $x_t$ given a noisy image $x_t$ and a timestep $t$.
   
@@ -783,7 +773,7 @@ Because we still want our UNet to work without it being conditioned on the class
 
 Training for this section will be the same as time-only, with the only difference being the conditioning vector c and doing unconditional generation periodically.
 
-<img src="/images/DDPM/algo3_c.png" alt="images" style="zoom:50%;" />
+<img src="/images/DDPM/algo3_c.png" alt="images" style="zoom:100%;" />
 
 The training loss can be visualized as:
 
@@ -792,13 +782,13 @@ The training loss can be visualized as:
 <table border="1" style="border-collapse: collapse; text-align: center; width: 100%;">
   <tr>
     <td>Sampled Image<br>Train epoch=5</td>
-    <td><img src="/images/DDPM/image-20241119225338968.png" alt="Image 3" width="500"></td>
+    <td><img src="/images/DDPM/final_5epoch.png" alt="Image 3" width="500"></td>
   </tr>
   <tr>
     <td>Sampled Image<br>Train epoch=20</td>
-    <td><img src="/images/DDPM/image-20241119225347464.png" alt="Image 4" width="500"></td>
+    <td><img src="/images/DDPM/final_20epoch.png" alt="Image 4" width="500"></td>
   </tr>
 </table>
 
-It seems great! We can say that this little diffusion model has "learned" to writing numbers!
+It seems great! It seems that this cutie little diffusion model has "learned" to write numbers!
 
