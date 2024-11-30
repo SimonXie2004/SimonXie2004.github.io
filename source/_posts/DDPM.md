@@ -7,7 +7,7 @@ tags:
 - Deep Learning
 - Generative Models
 category: UCB-CV-Project
-header_image:
+header_image: /images/DDPM/teaser.png
 abstract: UC Berkeley CV Project 5a -  Fun with Diffusion Models & 5b - Implement DDPM Yourself
 ---
 
@@ -508,8 +508,12 @@ To do this, we will denoise an image $x_t$ at step $t$ normally with the prompt 
 The full algorithm will be:
 
 $$
-\epsilon_1 = \text{UNet}(x_t, t, p_1) \\
-\epsilon_2 = \text{flip}(\text{UNet}(\text{flip}(x_t), t, p_2))\\
+\epsilon_1 = \text{UNet}(x_t, t, p_1)  
+$$
+$$
+\epsilon_2 = \text{flip}(\text{UNet}(\text{flip}(x_t), t, p_2))  
+$$
+$$
 \epsilon = \frac{\epsilon_1 + \epsilon_2}{2}
 $$
 
@@ -551,8 +555,12 @@ In this part, we'll implement [Factorized Diffusion](https://arxiv.org/abs/2404.
 In order to create hybrid images with a diffusion model, we can use a similar technique as above. We will create a composite noise estimate $\epsilon$, by estimating the noise with two different text prompts, and then combining low frequencies from one noise estimate with high frequencies of the other. The algorithm is:
 
 $$
-\epsilon_1 = \text{UNet}(x_t, t, p_1) \\
-\epsilon_2 = \text{UNet}(x_t, t, p_2) \\
+\epsilon_1 = \text{UNet}(x_t, t, p_1) 
+$$
+$$
+\epsilon_2 = \text{UNet}(x_t, t, p_2) 
+$$
+$$
 \epsilon = f_{\text{lowpass}}(\epsilon_1) + f_{\text{highpass}}(\epsilon_2)
 $$
 
