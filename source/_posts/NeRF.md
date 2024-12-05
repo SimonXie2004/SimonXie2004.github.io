@@ -162,7 +162,7 @@ This fundamentally means that at every small step $dt$ along the ray, we add the
 
 The discrete approximation (thus tractable to compute) of this equation can be stated as the following:
 $$
-\hat{C}(\mathbf{r}) = \sum_{i=1}^N(1 - \exp(-\sigma_i\delta_i))\mathbf{c}_i \text{, where } T_i = \exp(-\sum_{j=1}^{i-1}\sigma_j\delta_j)
+\hat{C}(\mathbf{r}) = \sum_{i=1}^N T_i(1 - \exp(-\sigma_i\delta_i))\mathbf{c}_i \text{, where } T_i = \exp(-\sum_{j=1}^{i-1}\sigma_j\delta_j)
 $$
 
 ### Experiments
@@ -189,4 +189,23 @@ $$
 And the final result on test set is:
 
 ![](/images/NeRF/final.gif)
+
+## B&W: Bells and Whistles
+
+NeRF computes depth by integrating the expected distance along rays through a scene. Each sampled point along a ray contributes to the depth value based on its density and the accumulated transmittance. This can also be understood as an "expectation" of ray depth. Specifically:
+
+$$
+\text{Depth} = \sum_{i=1}^N T_i \cdot \sigma_i \cdot z_i \cdot \Delta t_i
+$$
+
+where:
+
+$$
+T_i = \prod_{j=1}^{i-1} \exp(-\sigma_j \cdot \Delta t_j)
+$$
+
+This process ensures depth corresponds to the most opaque or highly weighted regions in the scene, aligning with rendered colors.
+
+
+![](/images/NeRF/depths.gif)
 
