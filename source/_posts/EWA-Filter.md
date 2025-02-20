@@ -234,10 +234,10 @@ Color Texture::sample_ewa(SampleParams sp, int level) {
             float weight = expf(-0.5f * (A*du*du + B*du*dv + C*dv*dv));
 
 #if DEBUG
-	std::cout << weight << " ";
+	        std::cout << weight << " ";
 #endif
 
-            color_sum += sample_bilinear(sp.p_uv, level); * weight;
+            color_sum += sample_bilinear(sp.p_uv, level) * weight;
             weight_sum += weight;
         }
 
