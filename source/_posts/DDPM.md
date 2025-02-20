@@ -11,9 +11,17 @@ header_image: /images/DDPM/teaser.png
 abstract: UC Berkeley CV Project 5a -  Fun with Diffusion Models & 5b - Implement DDPM Yourself
 ---
 
-> UC Berkeley CV Project 5a: Fun with Diffusion Models
->
-> UC Berkeley CV Project 5b: Implement DDPM Yourself
+## Project Overview
+
+1. UC Berkeley CV Project 5a: Fun with Diffusion Models
+   1. Iterative Denoising
+   2. [Classifier Free Guidance](https://arxiv.org/abs/2207.12598)
+   3. Img2Img Translation via [SDEdit](https://sde-image-editing.github.io/)
+   4. [Visual Anagrams](https://dangeng.github.io/visual_anagrams/)
+   5. Image Hybriding via [Factorized Diffusion](https://arxiv.org/abs/2404.11615)
+2. UC Berkeley CV Project 5b: Implement DDPM Yourself
+   1. Define UNet Structure
+   2. Train with noised dataset
 
 ## Part A: Fun with Diffusion Models
 
