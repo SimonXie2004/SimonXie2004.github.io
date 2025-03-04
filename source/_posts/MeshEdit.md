@@ -170,9 +170,14 @@ Actually, in a edge flip, we do not necessarily need to create new elements and 
 
 ### Result Gallery
 
-<img src="/images/MeshEdit/image-20250304013432929.png" alt="image-20250304013432929" style="zoom:50%;" />
+<table border="1" width="100%">
+    <tr>
+        <td width="50%"><img src="/images/MeshEdit/image-20250304034510064.png" alt="Image 1" width="100%"></td>
+        <td width="50%"><img src="/images/MeshEdit/image-20250304013432929.png" alt="Image 2" width="100%"></td>
+    </tr>
+</table>
 
-> A rendered teapot, with som edges flipped.
+> A rendered teapot, with some edges before & after flipped.
 
 ## Part 5: Split Edge
 
@@ -207,23 +212,32 @@ Here is the case when we are splitting non-boundary edges.
 ### Result Gallery
 
 <table border="1" width="100%">
-        <tr>
-            <td width="50%"><img src="/images/MeshEdit/image-20250304013402183.png" alt="Image 1" width="100%"></td>
-            <td width="50%"><img src="/images/MeshEdit/image-20250304015643774.png" alt="Image 2" width="100%"></td>
-        </tr>
-        <tr>
-            <td width="50%" align="center">A teapot, with edges <b>splitted</b></td>
-            <td width="50%" align="center">A teapot, with edges <b>splitted and flipped</b></td>
-        </tr>
-        <tr>
-            <td width="50%"><img src="/images/MeshEdit/image-20250304020020516.png" alt="Image 3" width="100%"></td>
-            <td width="50%"><img src="/images/MeshEdit/image-20250304020140708.png" alt="Image 4" width="100%"></td>
-        </tr>
-        <tr>
-            <td width="50%" align="center">A beetle, with <b>boundaries splitted</b></td>
-            <td width="50%" align="center">A beetle, with <b>boundaries splitted and flipped</b></td>
-        </tr>
-    </table>
+    <tr>
+        <td width="50%"><img src="/images/MeshEdit/image-20250304034510064.png" alt="Image A" width="100%"></td>
+        <td width="50%"><img src="/images/MeshEdit/image-20250304034823544.png" alt="Image B" width="100%"></td>
+    </tr>
+    <tr>
+        <td width="50%" align="center">A teapot</td>
+        <td width="50%" align="center">A beetle</td>
+    </tr>
+    <tr>
+        <td width="50%"><img src="/images/MeshEdit/image-20250304013402183.png" alt="Image 1" width="100%"></td>
+        <td width="50%"><img src="/images/MeshEdit/image-20250304020020516.png" alt="Image 3" width="100%"></td>
+    </tr>
+    <tr>
+        <td width="50%" align="center">A teapot, with edges <b>splitted</b></td>
+        <td width="50%" align="center">A beetle, with <b>boundaries splitted</b></td>
+    </tr>
+    <tr>
+        <td width="50%"><img src="/images/MeshEdit/image-20250304015643774.png" alt="Image 2" width="100%"></td>
+        <td width="50%"><img src="/images/MeshEdit/image-20250304020140708.png" alt="Image 4" width="100%"></td>
+    </tr>
+    <tr>
+        <td width="50%" align="center">A teapot, with edges <b>splitted and flipped</b></td>
+        <td width="50%" align="center">A beetle, with <b>boundaries splitted and flipped</b></td>
+    </tr>
+</table>
+
 ## Task 6: Loop Subdivision
 
 ### Algorithm Overview
