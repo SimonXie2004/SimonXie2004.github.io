@@ -1,0 +1,4 @@
+		BVH		Vallina	#Primitives	Rel.Speed
+cow		0.1823s	21.1210s	5856 faces	115.85x faster
+lucy		0.2515s	826.8349s	133796 faces	3287.6139x faster
+> Intel Ultra 9 285H, 1 Thread
