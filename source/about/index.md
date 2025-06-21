@@ -6,7 +6,7 @@ date: 2024-09-23 18:06:24
 
 # About [@SimonXie2004](https://simonxie2004.github.io/)
 
-[Email](mailto: simonxie2004@163.com) | [Github](https://github.com/SimonXie2004) | [CV](/about/CV.pdf)
+[Email](mailto: simonxie2004@163.com) | [Github](https://github.com/SimonXie2004) | [CV (Last Update: Jun.21, 2025)](/about/CV.pdf)
 
 <img src="/images/about/about_me2x.jpg" style="zoom:70%">
 
