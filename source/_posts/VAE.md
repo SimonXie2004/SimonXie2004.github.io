@@ -81,6 +81,8 @@ When training, $\sigma_{i}'$ is a fixed **hyperparameter**, usually takes $\frac
 
 ### Deriving Our Objective
 
+First, we focus on the decoder. We want the model decoded marginal distribution $p_\theta (x)$ as close to real distribution $p(x)$ as possible. This is to ensure the normal function of "generating images, xxx..."
+
 Our objective is to make $p_{\theta}(x)$ close to $p(x)$.
 $$
 p_\theta(x) = \int p(z) p_\theta(x|z)dz = \mathbb{E}_{z}[p_{\theta}(x|z)]
@@ -122,10 +124,7 @@ $$
 We wish to maximize NLL, i.e. $-\log p_{\theta}(x_{i})$
 Or equivilantly, minimize $\log p_{\theta}(x_{i})$
 
-~~However, this still relies on sampling zi's a lot of times. Especially in high-dimensional space, sampled zi will be very close to zero due to dimensional curse. This makes optimization unstable.~~
-
-Mainly speaking, we want something **more analytical**, like a explicit loss term. 
-We want the terms related with sampling **as less as possible**.
+However, using importance sampling to solve the previous, low-efficient optimization process is still not enough. We will prove that the above optimization target is still numerically unstable, and why the following ELBO is better in [**discussion part**](#why-elbo-is-better-than-optimizing-nll-directly)
 
 #### Solution: ELBO
 
@@ -264,24 +263,56 @@ Also, make them seperate from each other. (This is achieved by reconstruction lo
 ## Discussion
 ### Entropy Intuition
 
-[机器学习方法—信息论：自信息、熵、交叉熵与KL散度 - 知乎](https://zhuanlan.zhihu.com/p/345025351)
+[Recommended Reading: Understanding Entropy](https://zhuanlan.zhihu.com/p/345025351)
 
 Intuition 1: how random is X  
 Intuition 2: how large is the log probability in expectation under itself  
 
 $$
-\mathcal{H} = -E_{x \sim p(x)} [\log p(x)]
+\mathcal{H(p)} = E_{x \sim p(x)} [-\log p(x)] = \int_{\mathcal{X}} [-p(x) \log p(x)]dx = -\sum_{x \in \mathcal{X}}[p(x)\log p(x)]
 $$
 
 Intuitive 3: What is the **least encoding length of this message** (suppose we encode more-frequent messages with less bits, just like Huffman Coding)
-
-<img src="/images/VAE/Pasted%20image%2020250315073616.png" style="zoom:50%;" />
 
 As a result, we always want to:
 
 + Maximize information, i.e. maximize $-\log p_{\theta}(x)$
 + Minimize entropy, i.e. minimize $-E_{x \sim p(x)} \log p(x)$
+
+### Cross Entropy, KL Divergence Intuition
+
+KL Divergence is defined as the gap of entropy, i.e. $D_{KL}(p \| q) = H(p, q) - H(p)$, where: 
+
+$$
+H(p, q) = \mathbb{E}_{x \sim p(x)} [-\log q(x)] = \int_{\mathcal{X}} [-p(x)\log q(x)] dx = -\sum_{x \in \mathcal{X}} [p(x) \log q(x)]
+$$
+
+I.f.f "model distribution (q)" is equal to "realistic distribution (p)", cross entropy is equal to entropy, i.e. $H(p, p) = H(p)$
+
+The full, expanded definition is: 
+
+$$
+D_{\mathrm{KL}}(p\|q)
+\;=\;
+\sum_{x\in\mathcal X} p(x)\,\log\!\biggl(\frac{p(x)}{q(x)}\biggr)
+\;=\;
+\mathbb{E}_{x\sim p}\Bigl[\log p(x) - \log q(x)\Bigr].
+$$
+
+As a result, we always want to:
+
 + Minimize KL Divergence, i.e. minimize $H(p, q) - H(p)$
+
+Remark: We can prove that KL Divergence is always **positive**. Proof: use jenson's inequality on $-D_{KL}$, which only leaves $\log q(x)$, which is always negative. Hence $D_{KL}$ is always positive.
+
+Remark: We can prove that minimizing KL is equivilant to minimizing NLL. Proof: 
+
+$$
+\begin{aligned}
+KL(p \| p_\theta) &= \mathbb{E}_p [\log \frac{p(x)}{p_\theta(x)}] \\
+&= \underbrace{\mathbb{E}_{p}\!\bigl[-\log p_\theta(x)\bigr]}_{=\mathcal{L}_{\text{NLL}}(\theta)} - \underbrace{\mathbb{E}_{p}\!\bigl[-\log p(x)\bigr]}_{=H\!\left(p\right)}
+\end{aligned}
+$$
 
 ### Another Perspective on ELBO
 
@@ -327,6 +358,37 @@ $$
 
 This means that we are actually dropping a intractable KL term from our loss! (since it requires $p_\theta$)
 
+### Why ELBO is better than optimizing NLL directly?
+
+Here we restate the above problem: Suppose we are optimizing $-\log \mathbb{E}_{q_\phi (z | x_i)} w(z)$, where $w(z) = p_\theta (x_i | z) p(z) / q_\phi (z | x_i)$. Or, by the aforementioned re-parameterization trick, this is: $-\log \mathbb{E}_{\epsilon \sim N(0, I)} w(\epsilon)$.
+
+Suppose we want to know the optimization target's gradient to our parameters in encoder, i.e. $\theta$. Here is its value:
+
+$$
+\begin{aligned}
+\nabla_\theta & (-\log \mathbb{E}_\epsilon w(\epsilon)) \\
+&= -\frac{1}{\mathbb{E}_\epsilon w(\epsilon)} \cdot \mathbb{E}_\epsilon \nabla_\theta (w(\epsilon)) \\
+&= -\frac{1}{\mathbb{E}_\epsilon w(\epsilon)} \cdot \mathbb{E}_\epsilon [\frac{p(z)}{q_\phi (z | x_i)} \cdot \nabla_\theta p_\theta(x_i | z)] \\
+&= -\frac{1}{\mathbb{E}_\epsilon w(\epsilon)} \cdot \mathbb{E}_\epsilon [\frac{p(z) p_\theta(x_i | z)}{q_\phi (z | x_i)} \cdot \frac{\nabla_\theta p_\theta(x_i | z)}{p_\theta(x_i | z)}] \\
+&= -\frac{1}{\mathbb{E}_\epsilon w(\epsilon)} \cdot \mathbb{E}_\epsilon [w(\epsilon) \cdot \nabla_\theta \log p_\theta(x_i | z)] \\
+&= -\mathbb{E}_\epsilon [\frac{w(\epsilon)}{\mathbb{E}_\epsilon w(\epsilon)} \cdot \nabla_\theta \log p_\theta(x_i | z)]
+\end{aligned}
+$$
+
+Here we found the term $\frac{w(\epsilon)}{\mathbb{E}_\epsilon w(\epsilon)}$ annoying, since it requires an additional sampling on each datapoint $x_i$ to calculate this coefficient, increasing the variance and unstability. Also, it is numerically unstable due to the denominator can be close to 0. Let's see how ELBO does better:
+
+ELBO is trying to optimize: $-\log \mathbb{E}_{\epsilon} w(\epsilon) \approx \mathbb{E} [-\log w(\epsilon)]$ (should be inequality here), lets deriviate its gradient to see why its stabler and don't rely on sampling the inner coefficient:
+
+$$
+\begin{aligned}
+\nabla_\theta & \mathbb{E}_\epsilon [-\log w(\epsilon)] \\
+&= \mathbb{E}_\epsilon [\nabla_\theta [-\log w(\epsilon)]] \\
+&= \mathbb{E}_\epsilon [\nabla_\theta \log p_\theta(x_i | z)]
+\end{aligned}
+$$
+
+Here, the annoying coefficient disappears! And we can directly calculate the loss for each datapoint $x_i$ with only one sampling process on $\epsilon$ (or $z$, equivilantly), instead of sampling on $\epsilon$ twice. Also, we avoid the can-be-zero denominator in the first case. 
+
 ### Drawbacks on VAE
 
 We usually say that VAE generated images are **blurry**. Why?
@@ -357,7 +419,7 @@ Very short but effective. ~100 lines of code per method.
 
 Why is VAE still very useful in Latent Diffusion Models, though it generates blurry image?
 
-> Reference Answer: [为什么vae效果不好，但vae+diffusion效果就好了？ - 知乎](https://www.zhihu.com/question/649097976/answer/3621069894)
+> [Reference Answer here](https://www.zhihu.com/question/649097976/answer/3621069894)
 
 |                               | Traditional VAE                                 | VAE in LDM                                                                                       |
 | ----------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------ |
